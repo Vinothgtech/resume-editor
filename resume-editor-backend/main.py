@@ -4,24 +4,30 @@ from pydantic import BaseModel
 
 app = FastAPI()
 
-# CORS: Allow frontend requests (React runs on localhost:3000)
+# CORS setup: Allow React frontend
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=["*"],
+    allow_origins=["*"],  # You can use ["http://localhost:3000"] for security
     allow_credentials=True,
     allow_methods=["*"],
     allow_headers=["*"],
 )
 
-# In-memory store for resume
+# In-memory resume store
 saved_resume = {}
 
+# Request models
 class EnhanceRequest(BaseModel):
     section: str
     content: str
 
 class SaveRequest(BaseModel):
     resume: dict
+
+# Routes
+@app.get("/")
+def read_root():
+    return {"message": "Resume Editor Backend is running"}
 
 @app.post("/ai-enhance")
 def ai_enhance(data: EnhanceRequest):
