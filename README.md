@@ -1,70 +1,100 @@
-# Getting Started with Create React App
+# Resume Editor – Internship Assignment
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+This project is a web-based Resume Editor developed as part of a Frontend Development Internship assignment. It allows users to upload, edit, enhance, save, and download resume data, with a React frontend and FastAPI backend.
 
-## Available Scripts
+---
 
-In the project directory, you can run:
+## 🔧 Tech Stack
 
-### `npm start`
+- **Frontend:** React.js, Axios
+- **Backend:** Python FastAPI
+- **Tools:** FileSaver.js for downloading JSON
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+---
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+## 📁 Project Structure
 
-### `npm test`
+resume-editor/
+├── frontend/ # React.js frontend
+├── backend/ # FastAPI backend
+└── README.md
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
 
-### `npm run build`
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+---
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+## 🚀 How to Run the Project
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+### 🔹 Frontend Setup
 
-### `npm run eject`
+```bash
+cd frontend
+npm install
+npm start
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+Runs at: http://localhost:3000
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+🗂️ Upload Resume
+Allows users to upload .pdf or .docx files (simulated).
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+Parses and displays mock data for editing.
 
-## Learn More
+✏️ Edit Resume Content
+Editable fields for:
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+Full Name
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+Summary
 
-### Code Splitting
+Experience
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+Education
 
-### Analyzing the Bundle Size
+Skills
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+Users can add or remove items dynamically.
 
-### Making a Progressive Web App
+💡 Enhance with AI
+Each section has an "Enhance with AI" button.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+Sends content to the backend (/ai-enhance) and receives an improved version (mocked).
 
-### Advanced Configuration
+Updates the section with the enhanced text.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+💾 Save Resume
+Saves the entire resume data to the backend via POST /save-resume.
 
-### Deployment
+Uses JSON format for simplicity.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+⬇️ Download Resume
+Users can download their final resume as a .json file.
 
-### `npm run build` fails to minify
+Useful for saving or transferring data later.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+🔗 Frontend–Backend Integration
+React frontend communicates with FastAPI backend via Axios.
+
+Cross-Origin Resource Sharing (CORS) enabled for smooth local development.
+
+
+## 🧪 How to Use the App
+
+1. Start the backend server (`uvicorn main:app --reload --port 8000`)
+2. Start the frontend (`npm start`)
+3. On the web app:
+   - Click "Upload Resume" (uses dummy content)
+   - Edit any field (name, summary, etc.)
+   - Click "Enhance with AI" to simulate improvement
+   - Save your resume to backend
+   - Download the resume as a `.json` file
+
+
+
+
+👨‍💻 Submitted by
+Vinoth Kumar
+Frontend Developer
+
+📌 Assignment By
+Interview Ghost
